@@ -1,5 +1,5 @@
 server:
-  port: 9001 #·şÎñ×¢²áÖĞĞÄ¶Ë¿ÚºÅ
+  port: 9001 #æœåŠ¡æ³¨å†Œä¸­å¿ƒç«¯å£å·
 
 spring:
   application:
@@ -7,7 +7,7 @@ spring:
 
 eureka:
   client:
-    serviceUrl: #·şÎñ×¢²áÖĞĞÄµÄÅäÖÃÄÚÈİ£¬Ö¸¶¨·şÎñ×¢²áÖĞĞÄµÄÎ»ÖÃ
+    serviceUrl: #æœåŠ¡æ³¨å†Œä¸­å¿ƒçš„é…ç½®å†…å®¹ï¼ŒæŒ‡å®šæœåŠ¡æ³¨å†Œä¸­å¿ƒçš„ä½ç½®
       defaultZone: http://localhost:9999/eureka/
   instance:
     prefer-ip-address: true
