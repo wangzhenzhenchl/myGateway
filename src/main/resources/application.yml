@@ -1,13 +1,36 @@
 server:
-  port: 9001 #服务注册中心端口号
+  port: 9001
 
 spring:
   application:
     name: my-gateway
+  cloud:
+    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#          lower-case-service-id: true
+      routes:
+        - id: service
+          uri: lb://SERVICE
+          predicates:
+            - Path=/service/**
+            - Weight=group1, 9
+          filters:
+            - StripPrefix=1
+        - id: service1
+          uri: https://www.baidu.com
+          predicates:
+            - Path=/service/**
+            - Weight=group1, 1
+          filters:
+            - StripPrefix=1
+
+
 
 eureka:
   client:
-    serviceUrl: #服务注册中心的配置内容，指定服务注册中心的位置
+    serviceUrl:
       defaultZone: http://localhost:9999/eureka/
   instance:
     prefer-ip-address: true
